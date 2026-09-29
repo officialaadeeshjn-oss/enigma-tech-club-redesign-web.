@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.className+=" js"</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"><title>ENIGMA — College Tech Club | Solve the Unknown</title>
+<style>
+:root{--bg:#04060c;--bg2:#0a101d;--card:#0c1424;--line:#1c2942;--fg:#eef3ff;--muted:#98a7c7;--a:#3de0ff;--g:#5dffb1;--v:#8f7dff;--on:#02141b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fc;--bg2:#eaeff9;--card:#fff;--line:#d5deef;--fg:#0b1430;--muted:#4a5a7c;--a:#0a7f9c;--g:#0f7a4a;--v:#5b3fd1;--on:#fff}}
+:root[data-theme="light"]{--bg:#f5f7fc;--bg2:#eaeff9;--card:#fff;--line:#d5deef;--fg:#0b1430;--muted:#4a5a7c;--a:#0a7f9c;--g:#0f7a4a;--v:#5b3fd1;--on:#fff}
+*{box-sizing:border-box}h1,h2,h3,p,pre{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.32;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/64px 64px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/64px 64px;-webkit-mask-image:radial-gradient(ellipse 85% 55% at 50% 0,#000,transparent);mask-image:radial-gradient(ellipse 85% 55% at 50% 0,#000,transparent)}
+a{color:inherit;text-decoration:none}.w{max-width:1120px;margin:0 auto;padding:0 24px}.m{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:60;background:var(--a);color:var(--on);padding:10px 16px;border-radius:8px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}.logo{font-weight:800;letter-spacing:.24em;font-size:15px}.logo i{color:var(--a);font-style:normal}
+.lk{display:flex;gap:26px;align-items:center;font-size:12px;color:var(--muted);letter-spacing:.1em}.lk a:not(.btn){position:relative;padding:6px 0;transition:color .2s}.lk a:not(.btn):hover,.lk a.on{color:var(--fg)}.lk a.on:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--a)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 24px;background:var(--a);color:var(--on);border:1px solid var(--a);border-radius:12px;font:650 15px Inter,system-ui,sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s,color .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--a)}.btn.o{background:transparent;color:var(--fg);border-color:var(--line)}.btn.o:hover{border-color:var(--a);color:var(--a);box-shadow:none}.lk .btn{min-height:38px;padding:0 16px;font-size:12px;letter-spacing:.08em}
+.bg{display:none;min-height:42px;min-width:44px;background:none;border:1px solid var(--line);color:var(--fg);border-radius:10px;cursor:pointer;font-size:18px}
+@media(max-width:900px){.bg{display:block}.lk{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg2);flex-direction:column;align-items:stretch;gap:4px;padding:14px 24px 20px;border-bottom:1px solid var(--line)}.lk.open{display:flex}.lk a:not(.btn){padding:12px 0}.lk a.on:after{display:none}.lk .btn{margin-top:8px}}
+.hero{position:relative;padding:clamp(56px,9vw,112px) 24px clamp(56px,8vw,96px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}.hero:before{content:"";position:absolute;z-index:-1;width:560px;height:560px;right:-120px;top:-40px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--v) 38%,transparent),transparent 66%);filter:blur(24px)}@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 80%,transparent);border-radius:99px;padding:6px 14px;font-size:11px;letter-spacing:.12em;color:var(--g)}
+h1{font-size:clamp(44px,7.5vw,88px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:22px 0}h1 span{background:linear-gradient(95deg,var(--a),var(--v));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:clamp(17px,2vw,19px);max-width:520px;margin:0 0 32px}.hero .btn{margin:0 8px 10px 0}
+.coords{display:flex;gap:36px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}.coords b{display:block;font-size:20px;font-weight:700;color:var(--fg)}.coords span{font-size:10px;color:var(--muted);letter-spacing:.2em}
+.term{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -40px var(--a),0 0 0 1px color-mix(in srgb,var(--a) 6%,transparent)}.term .bar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}.term .bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}.term .bar i:first-child{background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+#out{padding:18px;font-size:13px;line-height:1.85;height:220px;overflow:auto;white-space:pre-wrap;color:var(--muted)}#out b{color:var(--g)}#out u{color:var(--a);text-decoration:none}
+.in{display:flex;gap:8px;padding:12px 18px;border-top:1px solid var(--line);font-size:13px}.in span{color:var(--a)}.in input{flex:1;min-height:0;padding:0;background:none;border:0;color:var(--fg);font:inherit;outline:none}
+section{padding:clamp(72px,10vw,120px) 0}section+section{border-top:1px solid color-mix(in srgb,var(--line) 55%,transparent)}
+.ey{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--a);margin-bottom:16px}.ey:before{content:"";width:28px;height:1px;background:var(--a)}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.03em;font-weight:750;margin-bottom:20px;max-width:760px}h3{font-size:18px;font-weight:650;letter-spacing:-.01em;margin:10px 0 6px}
+.sub{color:var(--muted);font-size:17px;max-width:640px;margin-bottom:44px}h2+.grid,h2+.ar,h2+.feat,h2+details{margin-top:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--a) 50%,var(--line));box-shadow:0 22px 44px -28px var(--a)}.card p{color:var(--muted);font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}.stats .card{background:none;border:0;border-radius:0;border-right:1px solid var(--line);padding:32px 12px}.stats .card:last-child{border-right:0}.stats .card:hover{transform:none;box-shadow:none}.stats b{display:block;font-size:clamp(34px,5vw,48px);line-height:1.1;font-weight:800;color:var(--fg)}.stats span{font-size:10.5px;color:var(--muted);letter-spacing:.2em}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.stats .card:nth-child(2n){border-right:0}.stats .card:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.feat{display:grid;grid-template-columns:1.1fr 1fr;padding:0;overflow:hidden}@media(max-width:720px){.feat{grid-template-columns:1fr}}.feat:hover{transform:none}.ban{min-height:240px;background:linear-gradient(135deg,var(--v),var(--a));display:grid;place-items:center;font-size:60px}.bd{padding:clamp(24px,4vw,40px)}.bd h3{font-size:26px;margin:14px 0}.bd p{margin-bottom:22px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;border-radius:99px;padding:4px 12px;background:color-mix(in srgb,var(--g) 14%,transparent);color:var(--g)}
+.cd{display:flex;gap:10px;margin:0 0 22px}.cd div{background:var(--bg2);border-radius:10px;padding:8px 14px;text-align:center;font-size:10px;letter-spacing:.14em;color:var(--muted)}.cd b{display:block;font-size:22px;color:var(--fg)}
+.ar{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}.ar .card{display:flex;gap:18px;align-items:flex-start}.ar .th{flex:0 0 76px;height:76px;border-radius:14px;background:linear-gradient(135deg,var(--v),var(--a));display:grid;place-items:center;font-size:30px}.ar h3{margin-top:4px}
+.op{font-size:10.5px;color:var(--a);letter-spacing:.16em}.av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--v),var(--a));display:grid;place-items:center;font-weight:800;font-size:26px;color:#fff;margin:14px 0;box-shadow:0 0 0 4px color-mix(in srgb,var(--a) 14%,transparent)}.role{font-size:10.5px;color:var(--g);letter-spacing:.16em;margin-bottom:8px}
+.st{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.st span{font-size:12px;padding:3px 10px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);color:var(--a)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:12px}@media(max-width:600px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal button{padding:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;cursor:pointer;background:linear-gradient(135deg,var(--v),var(--a));opacity:.92;transition:opacity .25s,transform .25s}.gal svg{display:block;width:100%;height:100%}.gal button:hover{opacity:1;transform:scale(1.02)}.gal button:nth-child(1),.gal button:nth-child(6){grid-column:span 2;grid-row:span 2}.gal button:nth-child(3n){background:linear-gradient(135deg,var(--g),var(--a))}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px;max-width:780px;transition:border-color .2s}details[open],details:hover{border-color:color-mix(in srgb,var(--a) 40%,var(--line))}summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--a);font-size:22px;line-height:1}details[open] summary:after{content:"–"}details p{margin-top:12px;color:var(--muted);font-size:15px}
+form{display:grid;gap:12px}input,textarea,select{min-height:48px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:inherit;width:100%;transition:border-color .2s}input:focus,textarea:focus,select:focus{border-color:var(--a);outline:none}textarea{min-height:120px}
+dialog{border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--fg);max-width:min(560px,92vw);padding:24px}dialog::backdrop{background:#000b;backdrop-filter:blur(4px)}
+.cta{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:24px;padding:clamp(32px,6vw,64px);text-align:center}.cta:before{content:"";position:absolute;inset:auto -10% -60% -10%;height:100%;background:radial-gradient(ellipse,color-mix(in srgb,var(--a) 22%,transparent),transparent 65%);pointer-events:none}.cta>*{position:relative}.cta h2{margin:0 auto 14px}.cta p{color:var(--muted);max-width:560px;margin:0 auto 26px}.cta .btn{margin:4px}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13px}footer a:hover{color:var(--a)}.fr{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.js section>.w{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.js section.v>.w{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js section>.w{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header><div class="w"><nav aria-label="Main"><a class="logo m" href="#top">ENIGMA<i>_</i></a>
+<button class="bg" id="bg" aria-expanded="false" aria-controls="lk" aria-label="Menu">☰</button>
+<div class="lk m" id="lk"><a href="#about">MANIFESTO</a><a href="#event">EVENT</a><a href="#archive">ARCHIVE</a><a href="#projects">PROJECTS</a><a href="#team">TEAM</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a><a class="btn" href="#join">JOIN NETWORK</a></div></nav></div></header>
+
+<main id="top">
+<div class="w hero"><div><span class="pill m">● SYSTEM ONLINE // COLLEGE TECH CLUB</span>
+<h1>SOLVE THE <span>UNKNOWN.</span></h1>
+<p class="lead">We are a collective of developers, designers, and innovators unraveling the mysteries of technology through creative destruction.</p>
+<a class="btn" href="https://chat.whatsapp.com/KUe221OJGsd63Hs5grwUMS">JOIN NETWORK</a> <a class="btn o" href="#about">READ MANIFESTO</a>
+<div class="coords m"><div><b>12.6381° N</b><span>LATITUDE</span></div><div><b>77.4406° E</b><span>LONGITUDE</span></div><div><b>08</b><span>OPERATIVES</span></div></div></div>
+<div class="term"><div class="bar m"><i></i><i></i><i></i>&nbsp;enigma — try typing "help"</div><pre id="out" class="m" aria-live="polite"></pre>
+<form class="in m" id="tf" autocomplete="off"><span>$</span><input id="ti" aria-label="Terminal command" placeholder="type a command…"></form></div></div>
+
+<section><div class="w"><div class="stats m">
+<div class="card"><b data-n="8">0</b><span>OPERATIVES</span></div><div class="card"><b data-n="3">0</b><span>MISSIONS LOGGED</span></div>
+<div class="card"><b data-n="4">0</b><span>CORE TEAMS</span></div><div class="card"><b data-n="1">0</b><span>MINDSET</span></div></div></div></section>
+
+<section id="about"><div class="w"><div class="ey m">01 / MANIFESTO</div><h2>We don't wait for permission to build.</h2>
+<p class="sub">ENIGMA is a collective of student innovators dedicated to technical excellence and creative destruction, an environment where high-intensity technology meets radical creativity, empowering the next generation of builders.</p>
+<div class="grid"><div class="card"><h3>TECH INNOVATION</h3><p>Fostering creative solutions and cutting-edge technological advancement in a raw technical environment.</p></div>
+<div class="card"><h3>CORE COMMUNITY</h3><p>Building a collaborative network of passionate tech enthusiasts and technical rebels.</p></div>
+<div class="card"><h3>MISSION EXCELLENCE</h3><p>Striving for technical mastery and professional development through rigorous missions.</p></div></div></div></section>
+
+<section id="event"><div class="w"><div class="ey m">02 / NEXT TRANSMISSION</div><h2>Next event: incoming.</h2>
+<div class="card feat"><div class="ban" aria-hidden="true">📡</div><div class="bd"><span class="tag m">STATUS: TO BE ANNOUNCED</span><h3 style="font-size:24px;margin:10px 0">Next mission loading…</h3>
+<p>Set the date in the page's <code>NEXT_EVENT</code> setting and a live countdown appears here. Until then, join the network to hear first.</p>
+<div class="cd m" id="cd" hidden></div><a class="btn" href="https://chat.whatsapp.com/KUe221OJGsd63Hs5grwUMS">GET NOTIFIED</a></div></div></div></section>
+
+<section id="archive"><div class="w"><div class="ey m">03 / ARCHIVE</div><h2>Past transmissions</h2>
+<div class="ar">
+<div class="card"><div class="th" aria-hidden="true">💘</div><div><div class="op m">MISSION COMPLETE</div><h3>The BlindDate</h3><p>Speed-networking for builders: match on curiosity, not CVs. Mar 17, 2026 · 002 Seminar Hall.</p></div></div>
+<div class="card"><div class="th" aria-hidden="true">🎯</div><div><div class="op m">2026 // MISSION COMPLETE</div><h3>Race for Roles 2026</h3><p>Recruitment drive for the core teams: Technical, Social Media, Design and Management. Feb 11, 2026 · Main Auditorium.</p></div></div>
+<div class="card"><div class="th" aria-hidden="true">⚔️</div><div><div class="op m">2025 // MISSION COMPLETE</div><h3>Innovation Duel 2025</h3><p>Students turned campus problems into real prototypes and smart innovations. Nov 27, 2025 · LH 113 &amp; 127.</p></div></div>
+</div></div></section>
+
+<section id="gallery"><div class="w"><div class="ey m">04 / GALLERY</div><h2>Moments from the field</h2><p class="sub">Illustrated scenes from each Enigma event. Tap to enlarge; real photos can replace them anytime.</p>
+<div class="gal" id="gl"><button data-c="The BlindDate: two builders meet under the spotlight" aria-label="Enlarge: The BlindDate: two builders meet under the spotlight"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon points="80,0 120,0 165,150 35,150" fill="#fff" opacity=".22"/><circle cx="80" cy="82" r="13" fill="#fff"/><rect x="63" y="98" width="34" height="42" rx="15" fill="#fff"/><circle cx="122" cy="82" r="13" fill="#fff" opacity=".85"/><rect x="105" y="98" width="34" height="42" rx="15" fill="#fff" opacity=".85"/><path d="M101 60c-6-9-16 0-8 8l8 8 8-8c8-8-2-17-8-8z" fill="#ff5c8a"/></svg></button><button data-c="Race for Roles 2026: four core teams, one podium" aria-label="Enlarge: Race for Roles 2026: four core teams, one podium"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="30" y="100" width="34" height="40" rx="4" fill="#fff" opacity=".5"/><rect x="72" y="80" width="34" height="60" rx="4" fill="#fff" opacity=".8"/><rect x="114" y="60" width="34" height="80" rx="4" fill="#fff"/><rect x="156" y="90" width="30" height="50" rx="4" fill="#fff" opacity=".6"/><line x1="131" y1="60" x2="131" y2="20" stroke="#fff" stroke-width="3"/><path d="M131 20h30l-8 8 8 8h-30z" fill="#4ade80"/></svg></button><button data-c="Innovation Duel 2025: prototype versus prototype" aria-label="Enlarge: Innovation Duel 2025: prototype versus prototype"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="20" y="55" width="60" height="50" rx="8" fill="#fff" opacity=".85"/><circle cx="50" cy="80" r="12" fill="none" stroke="#7c5cff" stroke-width="4"/><rect x="120" y="55" width="60" height="50" rx="8" fill="#fff"/><path d="M135 92l14-24 14 24z" fill="none" stroke="#22d3ee" stroke-width="4"/><path d="M104 40l-12 26h10l-6 24 20-32h-11l8-18z" fill="#ffd60a"/></svg></button><button data-c="The Enigma team: eight operatives, one network" aria-label="Enlarge: The Enigma team: eight operatives, one network"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="#fff" stroke-width="1.5" opacity=".6"><line x1="100" y1="75" x2="100" y2="25"/><line x1="100" y1="75" x2="150" y2="40"/><line x1="100" y1="75" x2="165" y2="80"/><line x1="100" y1="75" x2="145" y2="125"/><line x1="100" y1="75" x2="100" y2="130"/><line x1="100" y1="75" x2="55" y2="125"/><line x1="100" y1="75" x2="35" y2="80"/><line x1="100" y1="75" x2="50" y2="40"/></g><g fill="#fff"><circle cx="100" cy="75" r="11"/><circle cx="100" cy="25" r="7"/><circle cx="150" cy="40" r="7"/><circle cx="165" cy="80" r="7"/><circle cx="145" cy="125" r="7"/><circle cx="100" cy="130" r="7"/><circle cx="55" cy="125" r="7"/><circle cx="35" cy="80" r="7"/><circle cx="50" cy="40" r="7"/></g></svg></button><button data-c="Prototype night: circuits and ideas" aria-label="Enlarge: Prototype night: circuits and ideas"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="70" y="50" width="60" height="50" rx="6" fill="#fff" opacity=".9"/><g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"><path d="M70 62H30V30h40"/><path d="M70 88H20"/><path d="M130 62h40V30"/><path d="M130 88h50v34h-50"/><path d="M100 100v30h-40"/></g><g fill="#4ade80"><circle cx="70" cy="30" r="5"/><circle cx="20" cy="88" r="5"/><circle cx="170" cy="30" r="5"/><circle cx="60" cy="130" r="5"/></g></svg></button><button data-c="The crowd: a full seminar hall" aria-label="Enlarge: The crowd: a full seminar hall"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="55" y="12" width="90" height="22" rx="4" fill="#fff" opacity=".9"/><g fill="#fff"><circle cx="40" cy="70" r="7"/><circle cx="70" cy="70" r="7"/><circle cx="100" cy="70" r="7"/><circle cx="130" cy="70" r="7"/><circle cx="160" cy="70" r="7"/><circle cx="55" cy="98" r="7" opacity=".85"/><circle cx="85" cy="98" r="7" opacity=".85"/><circle cx="115" cy="98" r="7" opacity=".85"/><circle cx="145" cy="98" r="7" opacity=".85"/><circle cx="40" cy="126" r="7" opacity=".7"/><circle cx="70" cy="126" r="7" opacity=".7"/><circle cx="100" cy="126" r="7" opacity=".7"/><circle cx="130" cy="126" r="7" opacity=".7"/><circle cx="160" cy="126" r="7" opacity=".7"/></g></svg></button></div></div></section>
+
+<section id="projects"><div class="w"><div class="ey m">05 / PROJECTS</div><h2>Built by operatives</h2><p class="sub">Sample projects, replace with real ones.</p>
+<div class="grid">
+<div class="card"><h3 class="m">campus-fix</h3><p>Report and track campus issues from a phone.</p><div class="st"><span>React</span><span>Supabase</span></div><p class="m"><a style="color:var(--a)" href="#">GitHub</a> · <a style="color:var(--a)" href="#">Demo</a></p></div>
+<div class="card"><h3 class="m">data-to-decisions</h3><p>Small ML models that turn campus data into insights.</p><div class="st"><span>Python</span><span>scikit-learn</span></div><p class="m"><a style="color:var(--a)" href="#">GitHub</a> · <a style="color:var(--a)" href="#">Demo</a></p></div>
+<div class="card"><h3 class="m">match-engine</h3><p>The pairing logic behind BlindDate-style events.</p><div class="st"><span>TypeScript</span><span>Node</span></div><p class="m"><a style="color:var(--a)" href="#">GitHub</a> · <a style="color:var(--a)" href="#">Demo</a></p></div>
+</div></div></section>
+
+<section id="team"><div class="w"><div class="ey m">06 / CORE TEAM</div><h2>The operatives</h2>
+<div class="grid">
+<div class="card"><div class="op m">OP_101</div><div class="av">Y</div><h3>Yamuna Sharma D</h3><div class="role m">LEAD</div><p>Finds stories in colors, design and the little details others miss.</p></div>
+<div class="card"><div class="op m">OP_102</div><div class="av">K</div><h3>Kshitij Sharma</h3><div class="role m">CO-LEAD</div><p>A curious jack of all trades who loves learning and building.</p></div>
+<div class="card"><div class="op m">OP_103</div><div class="av">K</div><h3>Krishal Karna</h3><div class="role m">TECHNICAL LEAD</div><p>Turning data into decisions, one model at a time.</p></div>
+<div class="card"><div class="op m">OP_104</div><div class="av">S</div><h3>Shaili Srivastava</h3><div class="role m">OPERATION LEAD</div><p>Builds efficient systems and optimizes workflows.</p></div>
+<div class="card"><div class="op m">OP_105</div><div class="av">A</div><h3>Aakash Agarwal</h3><div class="role m">RESOURCE LEAD</div><p>Passionate technologist solving real-world challenges.</p></div>
+<div class="card"><div class="op m">OP_106</div><div class="av">A</div><h3>Ayadee Aphiwatamorn</h3><div class="role m">CREATIVE LEAD</div><p>Turns ideas into something visual and meaningful.</p></div>
+<div class="card"><div class="op m">OP_107</div><div class="av">S</div><h3>Suyog Lal Shrestha</h3><div class="role m">PHOTOGRAPHY LEAD</div><p>Eager to explore new things.</p></div>
+<div class="card"><div class="op m">OP_108</div><div class="av">S</div><h3>Sworaj Khadka</h3><div class="role m">SOCIAL MEDIA LEAD</div><p>Crafts our digital presence and keeps the community engaged.</p></div>
+</div></div></section>
+
+<section id="join"><div class="w"><div class="ey m">07 / WHY JOIN</div><h2>Build. Learn. Lead.</h2><p class="sub">Placeholder benefits, edit to match the club.</p>
+<div class="grid"><div class="card"><h3>Build real things</h3><p>Join project teams and ship prototypes.</p></div><div class="card"><h3>Learn from peers</h3><p>Mentorship from leads across every domain.</p></div><div class="card"><h3>Lead a team</h3><p>Apply in the recruitment drive for core roles.</p></div><div class="card"><h3>Meet builders</h3><p>Events built for connection, not just slides.</p></div></div>
+<div class="cta" style="margin-top:26px"><h2>Status: accepting members</h2><p>Open to all branches and years. Join the network to get event updates first.</p><a class="btn" href="https://chat.whatsapp.com/KUe221OJGsd63Hs5grwUMS">JOIN NETWORK</a> <a class="btn o" href="#collab">Collaborate with us</a></div></div></section>
+
+<section id="faq"><div class="w"><div class="ey m">08 / FAQ</div><h2>Common questions</h2><p class="sub">Sample answers, edit as needed.</p>
+<details><summary>Who can join?</summary><p>Any student, from any branch or year, who likes building and learning.</p></details>
+<details><summary>Do I need experience?</summary><p>No. Curiosity matters more than a CV.</p></details>
+<details><summary>How do recruitments work?</summary><p>Core roles are filled through the yearly drive, like Race for Roles.</p></details>
+<details><summary>Can we invite Enigma to collaborate?</summary><p>Yes. Use the form below or email us.</p></details></div></section>
+
+<section id="collab"><div class="w"><div class="ey m">09 / COLLABORATE</div><h2>Sponsors, speakers, other clubs.</h2><p class="sub">Send a message and it opens in your email app.</p>
+<form id="cf" style="max-width:520px"><input id="cn" placeholder="Your name / organisation" required><select id="ct"><option>Sponsorship</option><option>Speaker session</option><option>Joint event</option><option>Other</option></select><textarea id="cm" rows="4" placeholder="Tell us more" required></textarea><button class="btn" type="submit">Send message →</button></form></div></section>
+
+<section id="vision"><div class="w"><div class="ey m">10 / VISION</div><h2>Creating a community where innovation flourishes.</h2>
+<div class="grid"><div class="card"><div class="op m">01</div><h3>INNOVATION_FIRST</h3><p>Embracing new ideas and pushing boundaries.</p></div><div class="card"><div class="op m">02</div><h3>CORE_COMMUNITY</h3><p>An inclusive network of technical rebels.</p></div><div class="card"><div class="op m">03</div><h3>VERTICAL_GROWTH</h3><p>Constant evolution and technical mastery.</p></div></div></div></section>
+
+<section id="contact"><div class="w"><div class="ey m">11 / CONTACT</div><h2>Secure uplink.</h2>
+<div class="grid"><div class="card"><div class="op m">UPLINK.EMAIL</div><p><a href="mailto:enigmaclub5@gmail.com" style="color:var(--fg)">enigmaclub5@gmail.com</a></p></div>
+<div class="card"><div class="op m">COMMS.DIRECT</div><p><a href="tel:+919696724664" style="color:var(--fg)">+91 96967 24664</a></p></div>
+<div class="card"><div class="op m">BASE.LOC</div><p><a href="https://www.google.com/maps/search/?api=1&query=12.638143296188357,77.44063386876661" style="color:var(--fg)">JCVR+27P, Karnataka 562112</a></p></div></div></div></section>
+</main>
+
+<footer><div class="w fr"><span class="m">© 2026 ENIGMA // BUILT BY THE CLUB, FOR THE CLUB</span><span class="m"><a href="https://www.instagram.com/ju_enigma/">INSTAGRAM</a> · <a href="https://www.linkedin.com/company/enigma-club-ju/">LINKEDIN</a> · STATUS: ACCEPTING MEMBERS</span></div></footer>
+<dialog id="dg" aria-label="Gallery image"><div id="dv" style="border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--v),var(--a))"></div><p id="dt" style="color:var(--muted);margin:12px 0"></p><button class="btn" id="cl">Close</button></dialog>
+
+<script>
+var NEXT_EVENT=null; /* set e.g. "2026-11-20T10:00:00" to show a countdown */
+var bg=document.getElementById('bg'),lk=document.getElementById('lk');
+function cm(){lk.classList.remove('open');bg.setAttribute('aria-expanded',false)}
+bg.onclick=function(){var o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+lk.addEventListener('click',function(e){if(e.target.tagName==='A')cm()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cm()});
+var out=document.getElementById('out'),ti=document.getElementById('ti');
+function pr(s){out.innerHTML+=s+'\n';out.scrollTop=out.scrollHeight}
+pr('<b>ENIGMA OS v1.0</b> — system online');pr('type <u>help</u> for commands');
+var go={about:'#about',event:'#event',events:'#archive',archive:'#archive',projects:'#projects',team:'#team',faq:'#faq',contact:'#contact',join:'#join'};
+document.getElementById('tf').addEventListener('submit',function(e){e.preventDefault();var c=ti.value.trim().toLowerCase();ti.value='';if(!c)return;pr('<u>$</u> '+c.replace(/</g,'&lt;'));
+if(c==='help')pr('commands: about, event, archive, projects, team, faq, contact, join, clear');
+else if(c==='clear')out.innerHTML='';
+else if(go[c]){pr('<b>[ok]</b> navigating to '+c);document.querySelector(go[c]).scrollIntoView({behavior:'smooth'})}
+else pr('command not found: '+c.replace(/</g,'&lt;'))});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var n=+e.target.dataset.n,c=0;var h=setInterval(function(){c++;e.target.textContent=String(c).padStart(2,'0');if(c>=n)clearInterval(h)},120)})});
+document.querySelectorAll('[data-n]').forEach(function(x){io.observe(x)});
+if(NEXT_EVENT){var cd=document.getElementById('cd');cd.hidden=false;setInterval(function(){var d=Math.max(0,new Date(NEXT_EVENT)-Date.now()),p=[['DAYS',864e5],['HRS',36e5],['MIN',6e4],['SEC',1e3]],h='';p.forEach(function(x){h+='<div><b>'+Math.floor(d/x[1])%(x[0]==='DAYS'?1e9:x[0]==='SEC'||x[0]==='MIN'?60:24)+'</b>'+x[0]+'</div>'});cd.innerHTML=h},1000)}
+var dg=document.getElementById('dg');document.querySelectorAll('#gl button').forEach(function(b){b.onclick=function(){document.getElementById('dv').innerHTML=b.innerHTML.replace('<svg','<svg style="display:block;width:100%;height:auto"');document.getElementById('dt').textContent=b.dataset.c;dg.showModal()}});
+document.getElementById('cl').onclick=function(){dg.close()};dg.addEventListener('click',function(e){if(e.target===dg)dg.close()});
+document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();location.href='mailto:enigmaclub5@gmail.com?subject='+encodeURIComponent('Collaboration: '+document.getElementById('ct').value)+'&body='+encodeURIComponent(document.getElementById('cn').value+'\n\n'+document.getElementById('cm').value)});
+var lks=document.querySelectorAll('.lk a:not(.btn)');
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');ro.unobserve(e.target)}})},{threshold:.06});
+document.querySelectorAll('section').forEach(function(x){ro.observe(x)});
+var ao=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;lks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(function(x){ao.observe(x)});
+</script>
+</body>
+</html>
